@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="location.html">Locations</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="cart.html">Cart</a>
+        <a href="login.html">Sign In/Register</a>
+      </div>
+    <H1>Here are the list of pizzas</H1>
+    <section class="menu-cards">
+        <!-- Margherita Pizza -->
+        <article>
+            <img src="images/Margherita Pizza.jpg" alt="Margherita Pizza" width="300" height="200">
+            <h2>Margherita Pizza</h2>
+            <p>Fresh tomatoes, mozzarella, basil, olive oil</p>
+            <p>$12.99</p>
+            <form action="/add-to-cart" method="POST">
+                <input type="hidden" name="pizza" value="margherita">
+                <label for="qty-margherita">Quantity:</label>
+                <select id="qty-margherita" name="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <button type="submit">Add to Cart</button>
+            </form>
+        </article>
+
+        <!-- Pepperoni Pizza -->
+        <article>
+            <img src="images/Pepperoni Pizza.jpg" alt="Pepperoni Pizza" width="300" height="200">
+            <h2>Pepperoni Pizza</h2>
+            <p>Pepperoni, mozzarella, tomato sauce</p>
+            <p>$14.99</p>
+            <form action="/add-to-cart" method="POST">
+                <input type="hidden" name="pizza" value="pepperoni">
+                <label for="qty-pepperoni">Quantity:</label>
+                <select id="qty-pepperoni" name="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <button type="submit">Add to Cart</button>
+            </form>
+        </article>
+
+        <!-- Vegetarian Pizza -->
+        <article>
+            <img src="images/Vegetarian Pizza.png" alt="Vegetarian Pizza" width="300" height="200">
+            <h2>Vegetarian Pizza</h2>
+            <p>Bell peppers, mushrooms, onions, olives, tomatoes</p>
+            <p>$13.99</p>
+            <form action="/add-to-cart" method="POST">
+                <input type="hidden" name="pizza" value="vegetarian">
+                <label for="qty-vegetarian">Quantity:</label>
+                <select id="qty-vegetarian" name="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <button type="submit">Add to Cart</button>
+            </form>
+        </article>
+
+        <!-- BBQ Chicken Pizza -->
+        <article>
+            <img src="images/BBQ Chicken Pizza.jpg" alt="BBQ Chicken Pizza" width="300" height="200">
+            <h2>BBQ Chicken Pizza</h2>
+            <p>Grilled chicken, BBQ sauce, red onions, cilantro</p>
+            <p>$15.99</p>
+            <form action="/add-to-cart" method="POST">
+                <input type="hidden" name="pizza" value="bbq-chicken">
+                <label for="qty-bbq">Quantity:</label>
+                <select id="qty-bbq" name="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <button type="submit">Add to Cart</button>
+            </form>
+        </article>
+
+        <!-- Supreme Pizza -->
+        <article>
+            <img src="images/Supreme Pizza.jpg" alt="Supreme Pizza" width="300" height="200">
+            <h2>Supreme Pizza</h2>
+            <p>Pepperoni, sausage, mushrooms, onions, green peppers</p>
+            <p>$16.99</p>
+            <form action="/add-to-cart" method="POST">
+                <input type="hidden" name="pizza" value="supreme">
+                <label for="qty-supreme">Quantity:</label>
+                <select id="qty-supreme" name="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <button type="submit">Add to Cart</button>
+            </form>
+        </article>
+
+        <!-- Hawaiian Pizza -->
+        <article>
+            <img src="images/Hawaiian Pizza.jpg" alt="Hawaiian Pizza" width="300" height="200">
+            <h2>Hawaiian Pizza</h2>
+            <p>Ham, pineapple, mozzarella</p>
+            <p>$14.99</p>
+            <form action="/add-to-cart" method="POST">
+                <input type="hidden" name="pizza" value="hawaiian">
+                <label for="qty-hawaiian">Quantity:</label>
+                <select id="qty-hawaiian" name="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <button type="submit">Add to Cart</button>
+            </form>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <p>Pizza Paradise - 123 Pizza Street, Food City</p>
+    <p>Phone: (555) 123-4567</p>
+    <p>Email: info@pizzaparadise.com</p>
+</footer>
+
+</body>
+</html>

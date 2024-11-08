@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="location.html">Locations</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="cart.html">Cart</a>
+        <a href="login.html">Sign In/Register</a>
+      </div>
+    <H1>Add the tracker number to see our progress.</H1>
+    <main>
+        <!-- Order Status Timeline -->
+        <section id="order-timeline">
+            <h2>Order Status</h2>
+            <ol class="timeline">
+                <li>
+                    <h3>Order Placed</h3>
+                    <time datetime="2024-11-07T19:15">7:15 PM</time>
+                    <p>Your order has been received and confirmed</p>
+                </li>
+
+                <li>
+                    <h3>Preparing</h3>
+                    <time datetime="2024-11-07T19:20">7:20 PM</time>
+                    <p>Our chefs are preparing your delicious pizza</p>
+                </li>
+
+                <li>
+                    <h3>In the Oven</h3>
+                    <time datetime="2024-11-07T19:30">7:30 PM</time>
+                    <p>Your pizza is baking in our stone oven</p>
+                </li>
+
+                <li>
+                    <h3>Quality Check</h3>
+                    <time datetime="2024-11-07T19:35">7:35 PM</time>
+                    <p>Ensuring your order meets our quality standards</p>
+                </li>
+
+                <li>
+                    <h3>Out for Delivery</h3>
+                    <time datetime="2024-11-07T19:40">7:40 PM</time>
+                    <p>Your order is on its way!</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Order Details -->
+        <section id="order-details">
+            <h2>Order Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Size</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Margherita Pizza</td>
+                        <td>Large</td>
+                        <td>1</td>
+                        <td>$16.99</td>
+                    </tr>
+                    <tr>
+                        <td>Pepperoni Pizza</td>
+                        <td>Medium</td>
+                        <td>2</td>
+                        <td>$28.98</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Subtotal</td>
+                        <td>$45.97</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Tax</td>
+                        <td>$3.68</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Delivery Fee</td>
+                        <td>$5.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><strong>Total</strong></td>
+                        <td><strong>$54.65</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- Delivery Information -->
+        <section id="delivery-info">
+            <h2>Delivery Information</h2>
+            <address>
+                <p>Delivering to:</p>
+                <strong>John Doe</strong><br>
+                123 Main Street, Apt 4B<br>
+                New York, NY 10001<br>
+                Phone: <a href="tel:+15551234567">(555) 123-4567</a>
+            </address>
+
+            <div id="delivery-instructions">
+                <h3>Delivery Instructions</h3>
+                <p>Please ring doorbell twice. Building entrance code: 4321</p>
+            </div>
+        </section>
+
+        <!-- Driver Information -->
+        <section id="driver-info">
+            <h2>Delivery Driver</h2>
+            <div class="driver-details">
+                <img src="driver-avatar.jpg" alt="Driver Photo" width="100" height="100">
+                <p>Your driver: <strong>Mike</strong></p>
+                <p>Vehicle: Silver Toyota Camry</p>
+                <p>License Plate: ABC 1234</p>
+            </div>
+        </section>
+
+        <!-- Contact Options -->
+        <section id="contact-options">
+            <h2>Need Help?</h2>
+            <div class="contact-buttons">
+                <form action="/contact-driver" method="POST">
+                    <button type="submit">Contact Driver</button>
+                </form>
+                <form action="/contact-store" method="POST">
+                    <button type="submit">Contact Store</button>
+                </form>
+            </div>
+            <p>Store Phone: <a href="tel:+15559876543">(555) 987-6543</a></p>
+        </section>
+
+        <!-- Rate Order -->
+        <section id="rate-order" hidden>
+            <h2>Rate Your Order</h2>
+            <form action="/submit-rating" method="POST">
+                <fieldset>
+                    <legend>How was your order?</legend>
+                    <div>
+                        <input type="radio" id="rating5" name="rating" value="5">
+                        <label for="rating5">Excellent</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="rating4" name="rating" value="4">
+                        <label for="rating4">Good</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="rating3" name="rating" value="3">
+                        <label for="rating3">Average</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="rating2" name="rating" value="2">
+                        <label for="rating2">Poor</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="rating1" name="rating" value="1">
+                        <label for="rating1">Very Poor</label>
+                    </div>
+                </fieldset>
+                <label for="feedback">Additional Comments:</label>
+                <textarea id="feedback" name="feedback" rows="4"></textarea>
+                <button type="submit">Submit Rating</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pizza Paradise - 123 Pizza Street, Food City</p>
+        <p>Phone: (555) 123-4567</p>
+        <p>Email: info@pizzaparadise.com</p>
+    </footer>
+
+</body>
+</html>
