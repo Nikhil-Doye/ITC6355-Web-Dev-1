@@ -178,10 +178,23 @@
     </main>
 
     <footer>
-        <p>Pizza Paradise - 123 Pizza Street, Food City</p>
-        <p>Phone: (555) 123-4567</p>
-        <p>Email: info@pizzaparadise.com</p>
-    </footer>
+        <div class="container">
+          <div class="footer-content">
+            <h3>Pizza Paradise</h3>
+            <p>123 Pizza Street, Food City</p>
+            <p>Phone: (555) 123-4567</p>
+            <p>Email: info@pizzaparadise.com</p>
+          </div>
+          <div class="footer-content feedback-form">
+            <h3>We'd love to hear from you!</h3>
+            <form action="/submit-feedback" method="POST">
+              <input type="email" name="email" placeholder="Your email" required aria-label="Your email">
+              <textarea name="feedback" placeholder="Your feedback" required aria-label="Your feedback"></textarea>
+              <button type="submit">Send Feedback</button>
+            </form>
+          </div>
+        </div>
+      </footer>
 
 </body>
 </html>

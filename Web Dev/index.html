@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="deals.css">
     <title>Mona's Pizza</title>
 </head>
 <body>
@@ -16,6 +17,17 @@
         <a href="cart.html">Cart</a>
         <a href="login.html">Sign In/Register</a>
       </div>
+    
+      <div class="deals-container">
+        <div class="top-deals-section">
+            <div class="marquee-wrapper">
+                <marquee behavior="scroll" direction="left" scrollamount="10">
+                    Today's Specials: Family Deal - 2 Large Pizzas + 2 Sides + 2L Drink Only <span class="price">$29.99</span> 🍕
+                </marquee>
+            </div>
+        </div>
+    </div>
+      
     <H1>Welcome to Mona's Pizza</H1>
 <main>
     <section id="special-offers">
@@ -78,10 +90,23 @@
 </main>
 
 <footer>
-    <p>Pizza Paradise - 123 Pizza Street, Food City</p>
-    <p>Phone: (555) 123-4567</p>
-    <p>Email: info@pizzaparadise.com</p>
-</footer>
+    <div class="container">
+      <div class="footer-content">
+        <h3>Pizza Paradise</h3>
+        <p>123 Pizza Street, Food City</p>
+        <p>Phone: (555) 123-4567</p>
+        <p>Email: info@pizzaparadise.com</p>
+      </div>
+      <div class="footer-content feedback-form">
+        <h3>We'd love to hear from you!</h3>
+        <form action="/submit-feedback" method="POST">
+          <input type="email" name="email" placeholder="Your email" required aria-label="Your email">
+          <textarea name="feedback" placeholder="Your feedback" required aria-label="Your feedback"></textarea>
+          <button type="submit">Send Feedback</button>
+        </form>
+      </div>
+    </div>
+  </footer>
     
 </body>
 </html>

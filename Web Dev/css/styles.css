@@ -1,5 +1,3 @@
-/* Main styles for Pizza Paradise */
-
 /* Global Styles */
 body {
   font-family: Arial, sans-serif;
@@ -17,13 +15,13 @@ body {
 
 /* Header Styles */
 .topnav {
-  background-color: #333;
+  background-color: #333; /* Branding primary dark */
   overflow: hidden;
 }
 
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: #f2f2f2; /* Light text for contrast */
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -31,42 +29,51 @@ body {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #ffcc00; /* Highlight hover with warm gold */
   color: black;
 }
 
 .topnav a.active {
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* Branding green */
   color: white;
 }
 
 /* Main Content Styles */
 main {
   padding: 20px 0;
+  background-color: #fff; /* Clean background for readability */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 h1, h2, h3 {
-  color: #333;
+  color: #4CAF50; /* Branding green for headers */
   margin-bottom: 15px;
 }
 
 /* Section Styles */
 section {
-  background-color: #fff;
+  background-color: #f9f9f9; /* Light gray for sections */
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #4CAF50; /* Green accent border */
 }
 
 /* Form Styles */
 form {
   margin-top: 20px;
+  background-color: #fff; /* White for clarity */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 label {
   display: block;
   margin-bottom: 5px;
+  color: #333; /* Dark text */
 }
 
 input[type="text"],
@@ -78,13 +85,14 @@ select {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc; /* Neutral border */
   border-radius: 4px;
+  background-color: #fff; /* White background */
 }
 
 button, .button {
   display: inline-block;
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* Branding green */
   color: white;
   padding: 10px 20px;
   border: none;
@@ -94,7 +102,7 @@ button, .button {
 }
 
 button:hover, .button:hover {
-  background-color: #45a049;
+  background-color: #45a049; /* Slightly darker green */
 }
 
 /* Table Styles */
@@ -102,6 +110,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  background-color: #fff; /* White background */
 }
 
 th, td {
@@ -111,7 +120,8 @@ th, td {
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #4CAF50; /* Branding green for table headers */
+  color: white;
   font-weight: bold;
 }
 
@@ -123,9 +133,9 @@ th {
 }
 
 .menu-cards article {
-  background-color: #fff;
+  background-color: #f9f9f9; /* Light gray background for cards */
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 15px;
 }
 
@@ -134,30 +144,114 @@ th {
   height: auto;
   border-radius: 5px;
   margin-bottom: 10px;
+  border: 3px solid #4CAF50; /* Green border for images */
 }
 
 /* Footer Styles */
 footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
+  background-color: #333; /* Branding dark */
+  color: #f2f2f2; /* Light text for contrast */
   padding: 20px 0;
   margin-top: 20px;
 }
 
 footer a {
-  color: #fff;
+  color: #ffcc00; /* Warm gold for links */
+  text-decoration: none;
 }
 
-/* Responsive Design */
+footer a:hover {
+  color: #4CAF50; /* Green hover for links */
+}
+
+footer .footer-content h3 {
+  margin-bottom: 10px;
+  color: #ffcc00; /* Warm gold for headings */
+}
+
+footer .footer-content p {
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+footer .feedback-form form button {
+  background-color: #ffcc00; /* Warm gold for feedback button */
+  color: #333; /* Dark text for contrast */
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+footer .feedback-form form button:hover {
+  background-color: #e6b800; /* Slightly darker gold */
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .topnav a {
     float: none;
     display: block;
     text-align: left;
   }
-  
+
   .menu-cards {
     grid-template-columns: 1fr;
   }
+
+  footer .footer-content {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+/* Special Deals Section Styles */
+.top-deals-section {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: 20px 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-image: url('Web Dev/images/7.jpg'); /* Update this path to match your image location */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.marquee-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px 0;
+  border-top: 3px solid #4CAF50;
+  border-bottom: 3px solid #4CAF50;
+}
+
+marquee {
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.price {
+  color: #4CAF50;
+  font-size: 1.2em;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+  marquee {
+      font-size: 1.5em;
+  }
+  
+  .top-deals-section {
+      height: 300px;
+  }
+}
+
 }
