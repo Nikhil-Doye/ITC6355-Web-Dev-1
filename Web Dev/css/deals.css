@@ -1,56 +1,56 @@
 /* Creating a separate CSS file (deals.css) to avoid conflicts */
 .deals-container {
-    width: 100%;
-    padding: 0;
-    margin: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .top-deals-section {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    margin: 0;
-    overflow: hidden;
-    background-image: url('Web Dev/images/7.jpg') !important; /* Added !important to override */
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    border-radius: 0; /* Remove border radius */
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: 0;
+  overflow: hidden;
+  background-image: url("Web Dev/images/7.jpg") !important; /* Added !important to override */
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0; /* Remove border radius */
 }
 
 .marquee-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px 0;
-    border-top: 3px solid #4CAF50;
-    border-bottom: 3px solid #4CAF50;
-    z-index: 100; /* Ensure text appears above background */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px 0;
+  border-top: 3px solid #4caf50;
+  border-bottom: 3px solid #4caf50;
+  z-index: 100; /* Ensure text appears above background */
 }
 
 marquee {
-    color: #fff;
-    font-size: 2em;
-    font-weight: bold;
-    padding: 0 20px;
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 0 20px;
 }
 
 .price {
-    color: #4CAF50;
-    font-size: 1.2em;
-    font-weight: bold;
+  color: #4caf50;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 /* Media Query for responsiveness */
 @media (max-width: 768px) {
-    marquee {
-        font-size: 1.5em;
-    }
-    
-    .top-deals-section {
-        height: 300px;
-    }
+  marquee {
+    font-size: 1.5em;
+  }
+
+  .top-deals-section {
+    height: 300px;
+  }
 }
