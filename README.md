@@ -1,10 +1,11 @@
 # Slice Haven Pizza Website
 
-A full-stack web application for Slice Haven Pizza, offering an interactive menu, dynamic cart functionality, secure user authentication, and checkout options for pickup or delivery.
+🍕 A full-stack web application for Slice Haven Pizza, offering an interactive menu, dynamic cart functionality, secure user authentication, and checkout options for pickup or delivery. 🍴
 
-## Features
+## ✨ Features
 
-### **Frontend**
+### 🎨 **Frontend**
+
 - **Dynamic Menu Page**: Fetches menu items from the backend and displays them with images, descriptions, and prices.
 - **Interactive Cart**: Allows users to add, update, and remove items with real-time updates.
 - **User Authentication**:
@@ -15,7 +16,8 @@ A full-stack web application for Slice Haven Pizza, offering an interactive menu
   - Address form for delivery.
 - **Responsive Design**: Optimized for various screen sizes.
 
-### **Backend**
+### 🛠️ **Backend**
+
 - **API Endpoints**:
   - `GET /api/menu`: Fetch menu items.
   - `POST /api/login`: Authenticate users and generate JWT.
@@ -34,26 +36,30 @@ A full-stack web application for Slice Haven Pizza, offering an interactive menu
   - Environment variables for sensitive data.
   - Hashing passwords with bcrypt.
 
-## Installation
+## ⚙️ Installation
 
-### **Requirements**
+### 🔧 **Requirements**
+
 - Node.js and npm
 - PostgreSQL
 
-### **Setup**
+### 🛠️ **Setup**
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/your-repo-url/slice-haven-pizza.git
    cd slice-haven-pizza
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Set up the database:
+
    - Create a PostgreSQL database named `pizza_cafe`.
    - Run the provided SQL script to initialize the tables:
      ```sql
@@ -80,6 +86,7 @@ A full-stack web application for Slice Haven Pizza, offering an interactive menu
      ```
 
 4. Configure environment variables:
+
    - Create a `.env` file in the root directory:
      ```env
      PORT=3000
@@ -90,32 +97,38 @@ A full-stack web application for Slice Haven Pizza, offering an interactive menu
      ```
 
 5. Start the server:
+
    ```bash
    npm start
    ```
 
 6. Access the application at `http://localhost:3000`.
 
-## Usage
+## 🚀 Usage
 
 1. **Browse the Menu**:
+
    - View pizzas, their descriptions, and prices.
 
 2. **User Authentication**:
+
    - Register or log in to your account.
    - Use Google login for quick access.
 
 3. **Add Items to Cart**:
+
    - Select quantities and add items to your cart.
 
 4. **Manage Your Cart**:
+
    - Update quantities or remove items.
 
 5. **Checkout**:
+
    - Choose between pickup and delivery.
    - Provide a delivery address if required.
 
-## Folder Structure
+## 🗂️ Folder Structure
 
 ```
 project-root/
@@ -134,11 +147,12 @@ project-root/
 └── package.json
 ```
 
-## API Documentation
+## 📡 API Documentation
 
 ### **Endpoints**
 
 - **GET /api/menu**
+
   - Fetch all menu items.
   - Response:
     ```json
@@ -154,6 +168,7 @@ project-root/
     ```
 
 - **POST /api/register**
+
   - Register a new user.
   - Request:
     ```json
@@ -164,6 +179,7 @@ project-root/
     ```
 
 - **POST /api/login**
+
   - Authenticate a user.
   - Response:
     ```json
@@ -174,9 +190,10 @@ project-root/
     ```
 
 - **GET /api/cart**
+
   - Fetch the current user's cart items.
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Node.js, Express.js
@@ -184,11 +201,10 @@ project-root/
 - **Authentication**: Passport.js, JWT
 - **Other**: dotenv, bcrypt
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
 
-## License
+## 📜 License
 
-This project is licensed under the MIT License.
-
+This project is licensed under the MIT License. 
