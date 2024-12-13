@@ -194,10 +194,9 @@ app.post("/api/login", async (req, res) => {
 passport.use(
   new GoogleStrategy(
     {
-      clientID:
-        "176945514745-gp8g3c84tc9u6e580oa2tjrcis9qh8gk.apps.googleusercontent.com",
-      clientSecret: "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",
-      callbackURL: "/auth/google/callback",
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
+      callbackURL: process.env.GOOGLE_CALLBACK_URL,
       scope: ["email"], // Use only email and profile scopes
     },
     async (accessToken, refreshToken, profile, done) => {
