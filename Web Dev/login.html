@@ -1,102 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="location.html">Locations</a>
-        <a href="tracker.html">Tracker</a>
-        <a href="cart.html">Cart</a>
-        <a class="active" href="login.html">Sign In/Register</a>
-      </div>
-    <H1>Please log in or register </H1>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="location.html">Locations</a>
+      <a href="tracker.html">Tracker</a>
+      <a href="cart.html">Cart</a>
+      <a class="active" href="login.html">Sign In/Register</a>
+    </div>
+    <h1>Please log in or register</h1>
     <main>
-        <!-- Login Form Section -->
-        <section id="login-section">
-            <h1>Welcome Back!</h1>
-            
-            <form action="/login" method="POST" id="login-form">
-                <fieldset>
-                    <legend>Login to Your Account</legend>
-                    
-                    <div>
-                        <label for="email">Email Address:</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            required 
-                            autocomplete="email"
-                            placeholder="Enter your email">
-                    </div>
+      <!-- Login Form Section -->
+      <h1>Login</h1>
+      <form id="loginForm">
+        <label>Email:</label>
+        <input type="email" id="loginEmail" required /><br />
+        <label>Password:</label>
+        <input type="password" id="loginPassword" required /><br />
+        <button type="submit">Login</button>
+      </form>
 
-                    <div>
-                        <label for="password">Password:</label>
-                        <input 
-                            type="password" 
-                            id="password" 
-                            name="password" 
-                            required 
-                            minlength="8"
-                            placeholder="Enter your password">
-                    </div>
+      <h1>Register</h1>
+      <form id="registerForm">
+        <label>Email:</label>
+        <input type="email" id="registerEmail" required /><br />
+        <label>Password:</label>
+        <input type="password" id="registerPassword" required /><br />
+        <button type="submit">Register</button>
+      </form>
 
-                    <div>
-                        <input type="checkbox" id="remember-me" name="remember-me">
-                        <label for="remember-me">Remember me</label>
-                    </div>
+      <h2>Or Login with:</h2>
+      <button onclick="window.location.href='/auth/google'">
+        Login with Google
+      </button>
+      <button onclick="window.location.href='/auth/facebook'">
+        Login with Facebook
+      </button>
 
-                    <button type="submit">Log In</button>
-                </fieldset>
-            </form>
+      <script>
+        // Handle Login
+        document
+          .getElementById("loginForm")
+          .addEventListener("submit", async (e) => {
+            e.preventDefault();
 
-            <div id="alternative-login">
-                <p>Or login with:</p>
-                <form action="/oauth/google" method="POST">
-                    <button type="submit">
-                        <img src="google-icon.png" alt="Google Icon" width="20" height="20">
-                        Continue with Google
-                    </button>
-                </form>
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
 
-                <form action="/oauth/facebook" method="POST">
-                    <button type="submit">
-                        <img src="facebook-icon.png" alt="Facebook Icon" width="20" height="20">
-                        Continue with Facebook
-                    </button>
-                </form>
-            </div>
+            try {
+              const response = await fetch("/api/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password }),
+              });
 
-            <div id="password-recovery">
-                <a href="forgot-password.html">Forgot Password?</a>
-            </div>
-        </section>
+              if (!response.ok) {
+                const errorData = await response.json();
+                alert(errorData.message || "Login failed. Please try again.");
+                return;
+              }
 
-        <footer>
-            <div class="container">
-              <div class="footer-content">
-                <h3>Pizza Paradise</h3>
-                <p>123 Pizza Street, Food City</p>
-                <p>Phone: (555) 123-4567</p>
-                <p>Email: info@pizzaparadise.com</p>
-              </div>
-              <div class="footer-content feedback-form">
-                <h3>We'd love to hear from you!</h3>
-                <form action="/submit-feedback" method="POST">
-                  <input type="email" name="email" placeholder="Your email" required aria-label="Your email">
-                  <textarea name="feedback" placeholder="Your feedback" required aria-label="Your feedback"></textarea>
-                  <button type="submit">Send Feedback</button>
-                </form>
-              </div>
-            </div>
-          </footer>
+              const data = await response.json();
+              localStorage.setItem("token", data.token);
+              alert("Login successful!");
+              window.location.href = "/menu.html";
+            } catch (err) {
+              console.error("Error during login:", err);
+              alert(
+                "An error occurred while logging in. Please try again later."
+              );
+            }
+          });
 
-</body>
+        // Handle Registration
+        document
+          .getElementById("registerForm")
+          .addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById("registerEmail").value;
+            const password = document.getElementById("registerPassword").value;
+
+            try {
+              const response = await fetch("/api/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password }),
+              });
+
+              if (!response.ok) {
+                const errorData = await response.json();
+                alert(
+                  errorData.message || "Registration failed. Please try again."
+                );
+                return;
+              }
+
+              const data = await response.json();
+              alert("Registration successful! You can now log in.");
+              document.getElementById("registerForm").reset();
+            } catch (err) {
+              console.error("Error during registration:", err);
+              alert(
+                "An error occurred while registering. Please try again later."
+              );
+            }
+          });
+      </script>
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <h3>Pizza Paradise</h3>
+            <p>123 Pizza Street, Food City</p>
+            <p>Phone: (555) 123-4567</p>
+            <p>Email: info@pizzaparadise.com</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
 </html>

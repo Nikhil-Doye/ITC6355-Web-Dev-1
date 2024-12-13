@@ -1,157 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Pizza Cafe - Menu</title>
+    <style>
+      .menu-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .menu-cards article {
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        width: 300px;
+      }
+      .menu-cards img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
     <div class="topnav">
-        <a href="index.html">Home</a>
-        <a class="active" href="menu.html">Menu</a>
-        <a href="location.html">Locations</a>
-        <a href="tracker.html">Tracker</a>
-        <a href="cart.html">Cart</a>
-        <a href="login.html">Sign In/Register</a>
-      </div>
-    <H1>Here are the list of pizzas</H1>
-    <section class="menu-cards">
-        <!-- Margherita Pizza -->
-        <article>
-            <img src="images/Margherita Pizza.jpg" alt="Margherita Pizza" width="300" height="200">
-            <h2>Margherita Pizza</h2>
-            <p>Fresh tomatoes, mozzarella, basil, olive oil</p>
-            <p>$12.99</p>
-            <form action="/add-to-cart" method="POST">
-                <input type="hidden" name="pizza" value="margherita">
-                <label for="qty-margherita">Quantity:</label>
-                <select id="qty-margherita" name="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <button type="submit">Add to Cart</button>
-            </form>
-        </article>
-
-        <!-- Pepperoni Pizza -->
-        <article>
-            <img src="images/Pepperoni Pizza.jpg" alt="Pepperoni Pizza" width="300" height="200">
-            <h2>Pepperoni Pizza</h2>
-            <p>Pepperoni, mozzarella, tomato sauce</p>
-            <p>$14.99</p>
-            <form action="/add-to-cart" method="POST">
-                <input type="hidden" name="pizza" value="pepperoni">
-                <label for="qty-pepperoni">Quantity:</label>
-                <select id="qty-pepperoni" name="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <button type="submit">Add to Cart</button>
-            </form>
-        </article>
-
-        <!-- Vegetarian Pizza -->
-        <article>
-            <img src="images/Vegetarian Pizza.png" alt="Vegetarian Pizza" width="300" height="200">
-            <h2>Vegetarian Pizza</h2>
-            <p>Bell peppers, mushrooms, onions, olives, tomatoes</p>
-            <p>$13.99</p>
-            <form action="/add-to-cart" method="POST">
-                <input type="hidden" name="pizza" value="vegetarian">
-                <label for="qty-vegetarian">Quantity:</label>
-                <select id="qty-vegetarian" name="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <button type="submit">Add to Cart</button>
-            </form>
-        </article>
-
-        <!-- BBQ Chicken Pizza -->
-        <article>
-            <img src="images/BBQ Chicken Pizza.jpg" alt="BBQ Chicken Pizza" width="300" height="200">
-            <h2>BBQ Chicken Pizza</h2>
-            <p>Grilled chicken, BBQ sauce, red onions, cilantro</p>
-            <p>$15.99</p>
-            <form action="/add-to-cart" method="POST">
-                <input type="hidden" name="pizza" value="bbq-chicken">
-                <label for="qty-bbq">Quantity:</label>
-                <select id="qty-bbq" name="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <button type="submit">Add to Cart</button>
-            </form>
-        </article>
-
-        <!-- Supreme Pizza -->
-        <article>
-            <img src="images/Supreme Pizza.jpg" alt="Supreme Pizza" width="300" height="200">
-            <h2>Supreme Pizza</h2>
-            <p>Pepperoni, sausage, mushrooms, onions, green peppers</p>
-            <p>$16.99</p>
-            <form action="/add-to-cart" method="POST">
-                <input type="hidden" name="pizza" value="supreme">
-                <label for="qty-supreme">Quantity:</label>
-                <select id="qty-supreme" name="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <button type="submit">Add to Cart</button>
-            </form>
-        </article>
-
-        <!-- Hawaiian Pizza -->
-        <article>
-            <img src="images/Hawaiian Pizza.jpg" alt="Hawaiian Pizza" width="300" height="200">
-            <h2>Hawaiian Pizza</h2>
-            <p>Ham, pineapple, mozzarella</p>
-            <p>$14.99</p>
-            <form action="/add-to-cart" method="POST">
-                <input type="hidden" name="pizza" value="hawaiian">
-                <label for="qty-hawaiian">Quantity:</label>
-                <select id="qty-hawaiian" name="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <button type="submit">Add to Cart</button>
-            </form>
-        </article>
-    </section>
-</main>
-
-<footer>
-    <div class="container">
-      <div class="footer-content">
-        <h3>Pizza Paradise</h3>
-        <p>123 Pizza Street, Food City</p>
-        <p>Phone: (555) 123-4567</p>
-        <p>Email: info@pizzaparadise.com</p>
-      </div>
-      <div class="footer-content feedback-form">
-        <h3>We'd love to hear from you!</h3>
-        <form action="/submit-feedback" method="POST">
-          <input type="email" name="email" placeholder="Your email" required aria-label="Your email">
-          <textarea name="feedback" placeholder="Your feedback" required aria-label="Your feedback"></textarea>
-          <button type="submit">Send Feedback</button>
-        </form>
-      </div>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="location.html">Locations</a>
+      <a href="tracker.html">Tracker</a>
+      <a href="cart.html">Cart</a>
+      <a class="active" href="login.html">Sign In/Register</a>
     </div>
-  </footer>
+    <header>
+      <h1>Our Delicious Menu</h1>
+      <p>Choose your favorite pizzas and add them to your cart!</p>
+    </header>
 
-</body>
+    <main>
+      <!-- Dynamic content will be injected into this section -->
+      <section class="menu-cards">
+        <!-- Menu items will be dynamically loaded here -->
+      </section>
+    </main>
+
+    <script>
+      // Fetch menu items dynamically
+      fetch("/api/menu")
+        .then((response) => {
+          if (!response.ok) throw new Error("Network response was not ok");
+          return response.json();
+        })
+        .then((menuItems) => {
+          const menuContainer = document.querySelector(".menu-cards");
+          menuContainer.innerHTML = ""; // Clear any existing content
+
+          menuItems.forEach((item) => {
+            menuContainer.innerHTML += `
+                <article>
+                    <img src="${item.image_url}" alt="${item.name}">
+                    <h2>${item.name}</h2>
+                    <p>${item.description}</p>
+                    <p><strong>$${item.price}</strong></p>
+                    <label for="qty-${item.id}">Quantity:</label>
+                    <select id="qty-${item.id}" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <button onclick="addToCart(${item.id}, '${item.name}', ${item.price})">Add to Cart</button>
+                </article>
+            `;
+          });
+        })
+        .catch((err) => {
+          console.error("Error fetching menu items:", err);
+          alert("Failed to load menu items. Please try again later.");
+        });
+
+      // Decode JWT safely
+      function parseJWT(token) {
+        try {
+          const base64Url = token.split(".")[1];
+          const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+          const payload = JSON.parse(atob(base64));
+          return payload;
+        } catch (error) {
+          console.error("Failed to parse token:", error);
+          return null;
+        }
+      }
+
+      // Add item to cart
+      function addToCart(itemId, itemName, itemPrice) {
+        const token = localStorage.getItem("token");
+        if (!token) {
+          alert("You must be logged in to add items to the cart.");
+          window.location.href = "/login.html";
+          return;
+        }
+
+        const payload = parseJWT(token);
+        if (!payload || !payload.email) {
+          alert("Invalid session. Please log in again.");
+          window.location.href = "/login.html";
+          return;
+        }
+
+        const userEmail = payload.email; // Extract email from the token
+        const quantity = document.getElementById(`qty-${itemId}`).value;
+
+        fetch("/api/cart", {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            pizzaId: itemId,
+            quantity: Number(quantity),
+          }),
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error("Failed to add item to cart");
+            return response.json();
+          })
+          .then((data) => {
+            alert("Item added to cart successfully!");
+          })
+          .catch((err) => {
+            console.error("Error adding item to cart:", err);
+            alert("Error adding item to cart. Please try again.");
+          });
+      }
+    </script>
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <h3>Pizza Paradise</h3>
+          <p>123 Pizza Street, Food City</p>
+          <p>Phone: (555) 123-4567</p>
+          <p>Email: info@pizzaparadise.com</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

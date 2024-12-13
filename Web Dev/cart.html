@@ -1,203 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Cart</title>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
     <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="location.html">Locations</a>
-        <a href="tracker.html">Tracker</a>
-        <a class="active" href="cart.html">Cart</a>
-        <a href="login.html">Sign In/Register</a>
-      </div>
-    <H1>List of items in your cart. Would you like to pay now or pay later?</H1>
-    <main>
-        <section id="cart-items">
-            <h2>Cart Items</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Description</th>
-                        <th>Size</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Total</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Cart Item 1 -->
-                    <tr>
-                        <td>
-                            <img src="margherita.jpg" alt="Margherita Pizza" width="100" height="100">
-                            <span>Margherita Pizza</span>
-                        </td>
-                        <td>Fresh tomatoes, mozzarella, basil</td>
-                        <td>
-                            <select name="size-1">
-                                <option value="small">Small</option>
-                                <option value="medium" selected>Medium</option>
-                                <option value="large">Large</option>
-                            </select>
-                        </td>
-                        <td>
-                            <form action="/update-quantity" method="POST">
-                                <input type="number" name="quantity" value="1" min="1" max="10">
-                                <input type="hidden" name="item-id" value="1">
-                            </form>
-                        </td>
-                        <td>$12.99</td>
-                        <td>$12.99</td>
-                        <td>
-                            <form action="/remove-item" method="POST">
-                                <input type="hidden" name="item-id" value="1">
-                                <button type="submit">Remove</button>
-                            </form>
-                        </td>
-                    </tr>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="location.html">Locations</a>
+      <a href="tracker.html">Tracker</a>
+      <a class="active" href="cart.html">Cart</a>
+      <a href="login.html">Sign In/Register</a>
+    </div>
 
-                    <!-- Cart Item 2 -->
-                    <tr>
-                        <td>
-                            <img src="pepperoni.jpg" alt="Pepperoni Pizza" width="100" height="100">
-                            <span>Pepperoni Pizza</span>
-                        </td>
-                        <td>Pepperoni, mozzarella, tomato sauce</td>
-                        <td>
-                            <select name="size-2">
-                                <option value="small">Small</option>
-                                <option value="medium">Medium</option>
-                                <option value="large" selected>Large</option>
-                            </select>
-                        </td>
-                        <td>
-                            <form action="/update-quantity" method="POST">
-                                <input type="number" name="quantity" value="2" min="1" max="10">
-                                <input type="hidden" name="item-id" value="2">
-                            </form>
-                        </td>
-                        <td>$14.99</td>
-                        <td>$29.98</td>
-                        <td>
-                            <form action="/remove-item" method="POST">
-                                <input type="hidden" name="item-id" value="2">
-                                <button type="submit">Remove</button>
-                            </form>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    <!-- Cart Section -->
+    <h1>Your Cart</h1>
+    <div id="cart-container">
+      <p>Loading...</p>
+      <table id="cart-table" style="display: none">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Cart items will be dynamically added here -->
+        </tbody>
+      </table>
+      <p id="cart-total"></p>
+    </div>
 
-        <section id="cart-customization">
-            <h2>Customize Your Order</h2>
-            <form action="/add-special-instructions" method="POST">
-                <label for="special-instructions">Special Instructions:</label>
-                <textarea id="special-instructions" name="special-instructions" rows="4" placeholder="Add any special instructions here..."></textarea>
-            </form>
-        </section>
+    <!-- Checkout Section -->
+    <h2>Checkout Options</h2>
+    <label for="tip">Tip Amount:</label>
+    <input type="number" id="tip" step="0.01" placeholder="e.g., 5.00" />
+    <div>
+      <label>
+        <input type="radio" name="deliveryOption" value="pickup" checked /> Pick
+        Up
+      </label>
+      <label>
+        <input type="radio" name="deliveryOption" value="delivery" /> Delivery
+      </label>
+    </div>
+    <div id="delivery-address-form" style="display: none">
+      <label for="address">Delivery Address:</label>
+      <input type="text" id="address" placeholder="Enter your address" />
+    </div>
 
-        <section id="order-summary">
-            <h2>Order Summary</h2>
-            <table>
-                <tr>
-                    <td>Subtotal:</td>
-                    <td>$42.97</td>
-                </tr>
-                <tr>
-                    <td>Tax (8%):</td>
-                    <td>$3.44</td>
-                </tr>
-                <tr>
-                    <td>Delivery Fee:</td>
-                    <td>$5.00</td>
-                </tr>
-                <tr>
-                    <th>Total:</th>
-                    <th>$51.41</th>
-                </tr>
-            </table>
-        </section>
+    <button id="checkout-button">Checkout</button>
 
-        <section id="delivery-options">
-            <h2>Delivery Options</h2>
-            <form action="/set-delivery-option" method="POST">
-                <fieldset>
-                    <legend>Choose Delivery Method</legend>
-                    <div>
-                        <input type="radio" id="delivery" name="delivery-method" value="delivery" checked>
-                        <label for="delivery">Home Delivery</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="pickup" name="delivery-method" value="pickup">
-                        <label for="pickup">Store Pickup</label>
-                    </div>
-                </fieldset>
+    <script>
+      // Fetch and Display Cart Items
+      async function loadCart() {
+        const cartContainer = document.getElementById("cart-container");
+        const cartTable = document.getElementById("cart-table");
+        const cartTotalElement = document.getElementById("cart-total");
+        cartContainer.innerHTML = "<p>Loading...</p>";
 
-                <fieldset>
-                    <legend>Delivery Address</legend>
-                    <div>
-                        <label for="street">Street Address:</label>
-                        <input type="text" id="street" name="street" required>
-                    </div>
-                    <div>
-                        <label for="apartment">Apartment/Suite:</label>
-                        <input type="text" id="apartment" name="apartment">
-                    </div>
-                    <div>
-                        <label for="city">City:</label>
-                        <input type="text" id="city" name="city" required>
-                    </div>
-                    <div>
-                        <label for="zipcode">ZIP Code:</label>
-                        <input type="text" id="zipcode" name="zipcode" pattern="[0-9]{5}" required>
-                    </div>
-                </fieldset>
-            </form>
-        </section>
+        try {
+          const response = await fetch("/api/cart", { credentials: "include" });
+          if (!response.ok) {
+            if (response.status === 401) {
+              alert("You must be logged in to access the cart.");
+              window.location.href = "login.html";
+              return;
+            }
+            throw new Error("Failed to load cart items");
+          }
 
-        <section id="promo-code">
-            <h2>Promo Code</h2>
-            <form action="/apply-promo" method="POST">
-                <label for="promo">Enter Promo Code:</label>
-                <input type="text" id="promo" name="promo">
-                <button type="submit">Apply</button>
-            </form>
-        </section>
+          const cartItems = await response.json();
+          cartContainer.innerHTML = "";
+          cartTable.style.display = "table";
+          cartTotalElement.innerHTML = "";
 
-        <section id="checkout-buttons">
-            <form action="/checkout" method="POST">
-                <button type="submit">Proceed to Checkout</button>
-            </form>
-            <a href="menu.html">Continue Shopping</a>
-        </section>
-    </main>
+          let total = 0;
+          cartItems.forEach((item) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+              <td><img src="${item.pizza_image}" alt="${
+              item.pizza_name
+            }" width="100"></td>
+              <td>${item.pizza_name}</td>
+              <td>${item.pizza_description}</td>
+              <td>
+                <input type="number" value="${item.quantity}" min="1" 
+                  data-pizza-id="${item.cart_item_id}" class="quantity-input">
+              </td>
+              <td>$${item.unit_price}</td>
+              <td>$${item.quantity * item.unit_price}</td>
+              <td>
+                <button class="remove-btn" data-pizza-id="${
+                  item.cart_item_id
+                }">Remove</button>
+              </td>
+            `;
+            cartTable.querySelector("tbody").appendChild(row);
+            total += item.quantity * item.unit_price;
+          });
 
-    <footer>
-        <div class="container">
-          <div class="footer-content">
-            <h3>Pizza Paradise</h3>
-            <p>123 Pizza Street, Food City</p>
-            <p>Phone: (555) 123-4567</p>
-            <p>Email: info@pizzaparadise.com</p>
-          </div>
-          <div class="footer-content feedback-form">
-            <h3>We'd love to hear from you!</h3>
-            <form action="/submit-feedback" method="POST">
-              <input type="email" name="email" placeholder="Your email" required aria-label="Your email">
-              <textarea name="feedback" placeholder="Your feedback" required aria-label="Your feedback"></textarea>
-              <button type="submit">Send Feedback</button>
-            </form>
-          </div>
-        </div>
-      </footer>
+          cartTotalElement.textContent = `Total: $${total}`;
 
-</body>
+          // Add event listeners for quantity inputs
+          document.querySelectorAll(".quantity-input").forEach((input) => {
+            input.addEventListener("change", updateCartItem);
+          });
+
+          // Add event listeners for remove buttons
+          document.querySelectorAll(".remove-btn").forEach((button) => {
+            button.addEventListener("click", removeCartItem);
+          });
+        } catch (err) {
+          console.error(err);
+          cartContainer.innerHTML = "<p>Error loading cart items</p>";
+        }
+      }
+
+      // Update Cart Item Quantity
+      async function updateCartItem(event) {
+        const input = event.target;
+        const pizzaId = input.dataset.pizzaId;
+        const quantity = parseInt(input.value);
+
+        if (quantity <= 0) {
+          alert("Quantity must be at least 1");
+          input.value = 1; // Reset to 1
+          return;
+        }
+
+        try {
+          const response = await fetch("/api/cart", {
+            method: "PUT",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ pizzaId, quantity }),
+          });
+
+          if (!response.ok) throw new Error("Failed to update cart item");
+          alert("Cart updated successfully");
+          loadCart();
+        } catch (err) {
+          console.error(err);
+          alert("Error updating cart item");
+        }
+      }
+
+      // Remove Cart Item
+      async function removeCartItem(event) {
+        const button = event.target;
+        const pizzaId = button.dataset.pizzaId;
+
+        try {
+          const response = await fetch(`/api/cart/${pizzaId}`, {
+            method: "DELETE",
+            credentials: "include",
+          });
+          if (!response.ok) throw new Error("Failed to remove cart item");
+          alert("Item removed from cart");
+          loadCart();
+        } catch (err) {
+          console.error(err);
+          alert("Error removing cart item");
+        }
+      }
+
+      // Handle Delivery Option Toggle
+      document
+        .querySelectorAll('input[name="deliveryOption"]')
+        .forEach((radio) => {
+          radio.addEventListener("change", () => {
+            const deliveryForm = document.getElementById(
+              "delivery-address-form"
+            );
+            if (radio.value === "delivery") {
+              deliveryForm.style.display = "block";
+            } else {
+              deliveryForm.style.display = "none";
+            }
+          });
+        });
+
+      // Handle Checkout
+      document
+        .getElementById("checkout-button")
+        .addEventListener("click", async () => {
+          const tip = parseFloat(document.getElementById("tip").value) || 0;
+          const deliveryOption = document.querySelector(
+            'input[name="deliveryOption"]:checked'
+          ).value;
+          const deliveryAddress =
+            deliveryOption === "delivery"
+              ? document.getElementById("address").value
+              : null;
+
+          if (deliveryOption === "delivery" && !deliveryAddress) {
+            alert("Please provide a delivery address.");
+            return;
+          }
+
+          try {
+            const response = await fetch("/api/cart/checkout", {
+              method: "POST",
+              credentials: "include",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ tip, deliveryOption, deliveryAddress }),
+            });
+
+            if (!response.ok) throw new Error("Checkout failed");
+            const data = await response.json();
+            alert(data.message || "Checkout successful!");
+          } catch (err) {
+            console.error(err);
+            alert("Error during checkout");
+          }
+        });
+
+      // Load Cart on Page Load
+      loadCart();
+    </script>
+  </body>
 </html>
