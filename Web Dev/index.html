@@ -8,6 +8,66 @@
     <link rel="stylesheet" href="css/deals.css" />
     <script defer src="pizza-cafe-backend/feedback.js"></script>
     <title>Slice Heaven Pizza</title>
+    <style>
+      #popular-pizzas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      #popular-pizzas article {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        max-width: 300px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      #popular-pizzas img {
+        border-radius: 8px;
+        width: 100%;
+        height: 200px; /* Set a consistent height */
+        object-fit: cover; /* Ensure the image scales uniformly */
+      }
+
+      #opening-hours {
+        max-width: 1000px; /* Restrict the width */
+        margin: 0 auto; /* Center the section horizontally */
+        padding: 20px;
+        background-color: #f9f9f9; /* Optional: Add a subtle background color */
+        border: 1px solid #ddd; /* Optional: Add a border */
+        border-radius: 8px; /* Optional: Round the corners */
+      }
+
+      #opening-hours h2 {
+        text-align: center; /* Center align the heading */
+        color: #4caf50; /* Use a consistent green color */
+      }
+
+      #opening-hours table {
+        width: 100%; /* Ensure the table fills the container */
+        border-collapse: collapse;
+      }
+
+      #opening-hours th {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        text-align: left;
+      }
+
+      #opening-hours td {
+        padding: 10px;
+        text-align: left;
+      }
+
+      #opening-hours tr:nth-child(even) {
+        background-color: #f2f2f2; /* Add a subtle row background for better readability */
+      }
+    </style>
   </head>
   <body>
     <div class="topnav">
@@ -32,28 +92,18 @@
     </div>
 
     <h1>Welcome to Slice Heaven Pizza</h1>
+    <h2>Our Most Popular Pizzas</h2>
     <main>
       <section id="popular-pizzas">
-        <h2>Our Most Popular Pizzas</h2>
         <article>
           <h3>Margherita</h3>
-          <img
-            src="images/Margherita Pizza.jpg"
-            alt="Margherita Pizza"
-            width="300"
-            height="200"
-          />
+          <img src="images/Margherita Pizza.jpg" alt="Margherita Pizza" />
           <p>Fresh tomatoes, mozzarella, basil</p>
         </article>
 
         <article>
           <h3>Pepperoni Supreme</h3>
-          <img
-            src="images/Pepperoni Pizza.jpg"
-            alt="Pepperoni Pizza"
-            width="300"
-            height="200"
-          />
+          <img src="images/Pepperoni Pizza.jpg" alt="Pepperoni Pizza" />
           <p>Double pepperoni, extra cheese</p>
         </article>
       </section>
